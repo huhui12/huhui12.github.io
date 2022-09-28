@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        #div{
+
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    <!--设置禁用属性-->
+<input type="text" id="input1" placeholder="请输入数字" disabled>
+<input type="text" id="input2" placeholder="请输入数字" disabled>
+<input type="text" id="input3" >
+<br>
+<input type="button" id="but1" value="+" style="color: hotpink;background-color: chartreuse">
+<input type="button" id="but2" value="-" style="color: hotpink;background-color: skyblue">
+<input type="button" id="but3" value="*" style="color: hotpink;background-color: darkcyan">
+<input type="button" id="but4" value="/" style="color: hotpink;background-color: yellow">
+    <input type="button" id="but5" value="点击刷新" style="color: hotpink;background-color: yellow">
+</div>
+</body>
+<script>
+$(function () {
+    $("#but5").click(function () {
+        let v1 = Math.floor(Math.random()*20);
+        let v2= Math.floor(Math.random()*20);
+        $("#input1").attr("value",v1);
+        $("#input2").attr("value",v2);
+        $("#input3").val('');
+    })
+
+    //加
+    $("#but1").click(function () {
+            let val = $("#input1").val();
+            let val1 = $("#input2").val();
+            let newVar = parseInt(val)+parseInt(val1);
+            $("#input3").val(newVar);
+    })
+    //减
+    $("#but2").click(function () {
+        let val = $("#input1").val();
+        let val1 = $("#input2").val();
+        let newVar = parseInt(val)-parseInt(val1);
+        $("#input3").val(newVar);
+    })
+    //乘
+    $("#but3").click(function () {
+        let val = $("#input1").val();
+        let val1 = $("#input2").val();
+        let newVar = parseInt(val)*parseInt(val1);
+        $("#input3").val(newVar);
+    })
+    //除
+    $("#but4").click(function () {
+        let val = $("#input1").val();
+        let val1 = $("#input2").val();
+        let newVar = parseInt(val)/parseInt(val1);
+        $("#input3").val(newVar);
+    })
+})
+</script>
+</html>
