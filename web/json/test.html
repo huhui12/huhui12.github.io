@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20202996java一班胡辉</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        div {
+            width: 650px;
+            border: #222222 1px solid;
+            margin-top: 50px;
+            margin-left: 400px;
+            background-color: #666666;
+
+        }
+        p {
+            border: #2bba9e 2px solid;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 10px;
+            color: #25A5F7;
+            text-align: center;
+            line-height: 50px;
+            opacity: 1.0;
+            font-width: 30px;
+            font-size: 25px;
+            box-shadow: 0 0 10px #25A5F7;
+            transition: all ,3s;
+            top:300px;
+            left: 200px;
+            filter:glow(color=skyblue,direction=2);
+           /* font-family: 华文行楷；*/
+        }
+    </style>
+</head>
+<body>
+
+<marquee direction="" vspace="40px" hspace="540" height="40px" style="color:red;font-weight: bold;font-size: 25px"><em>单击圆圈随机打乱，双击还原</em></marquee>
+</body>
+<script>
+    var s="考生信息:java一班胡辉，白酒新熟山中归，黄鸡啄黍秋正肥。呼童烹鸡酌白酒，儿女嬉笑牵人衣。高歌取醉欲自慰，起舞落日争光辉。游说万乘苦不早，著鞭跨马涉远道。会稽愚妇轻买臣，余亦辞家西入秦。仰天大笑出门去，我辈岂是蓬蒿人。";
+    let split = s.split("");
+  //  let div = document.createElement("div");
+    for (const s1 of split) {
+        let p = document.createElement("p");
+        p.innerText=s1;
+        document.body.appendChild(p);
+    }
+   // document.body.appendChild(div);
+
+    //随机换位
+    document.body.onclick=function () {
+        let p = document.getElementsByTagName("p");
+        for (var p1 of p) {
+            var number1 = Math.floor(Math.random()*650);
+            var number2 = Math.floor(Math.random()*650);
+            p1.style.position='absolute';
+            p1.style.top=number1+"px";
+            p1.style.left=number2+"px";
+        }
+    }
+
+    //重新归位
+    document.body.ondblclick =function () {
+        var element,p = document.getElementsByTagName("p");
+        while(p.length>0){
+            element=p[0];
+            element.parentElement.removeChild(element);
+        }
+        var s = "考生信息:java一班胡辉，白酒新熟山中归，黄鸡啄黍秋正肥。呼童烹鸡酌白酒，儿女嬉笑牵人衣。高歌取醉欲自慰，起舞落日争光辉。游说万乘苦不早，著鞭跨马涉远道。会稽愚妇轻买臣，余亦辞家西入秦。仰天大笑出门去，我辈岂是蓬蒿人。";
+        let split = s.split("");
+        //  let div = document.createElement("div");
+        for (const s1 of split) {
+            let p = document.createElement("p");
+            p.innerText = s1;
+            document.body.appendChild(p);
+        }
+        /*for (var i = 0; i < p.length; i++) {
+            p[i].remove();
+        }*/
+        /*if(document.getElementsByTagName("p")!=null) {
+
+        }else {
+            var s = "白酒新熟山中归，黄鸡啄黍秋正肥。呼童烹鸡酌白酒，儿女嬉笑牵人衣。高歌取醉欲自慰，起舞落日争光辉。游说万乘苦不早，著鞭跨马涉远道。会稽愚妇轻买臣，余亦辞家西入秦。仰天大笑出门去，我辈岂是蓬蒿人。";
+            let split = s.split("");
+            //  let div = document.createElement("div");
+            for (const s1 of split) {
+                let p = document.createElement("p");
+                p.innerText = s1;
+                document.body.appendChild(p);
+            }
+        }*/
+        /*function start1() {
+            let p = document.getElementsByTagName("p");
+            for(var i=0;i<p.length;i++){
+                p[i].style.color = "red";
+            }
+            setTimeout("start2()", 100);//延时100毫秒执行下一个
+        }*/
+        /*function start1() {
+            let p = document.getElementsByTagName("p");
+            for(var i=0;i<p.length;i++){
+                p[i].style.color = "red";
+            }
+
+            setTimeout(start2, 100);//延时100毫秒执行下一个
+
+        }
+
+        function start2() {
+
+            let p = document.getElementsByTagName("p");
+            for(var i=0;i<p.length;i++){
+                p[i].style.color = "blue";
+            }
+            setTimeout(start3, 100);
+
+        }
+
+        function start3() {
+            let p = document.getElementsByTagName("p");
+            for(var i=0;i<p.length;i++){
+                p[i].style.color = "#BFAD09";
+            }
+            setTimeout(start4, 100);
+
+        }
+
+        function start4() {
+            let p = document.getElementsByTagName("p");
+            for(var i=0;i<p.length;i++){
+                p[i].style.color = "#009688";
+            }
+            setTimeout(start1, 100);
+
+        }
+
+        window.onload=start1();//执行一遍函数start1进入循环*/
+
+    }
+
+</script>
+</html>
